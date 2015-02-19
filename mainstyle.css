@@ -1,0 +1,128 @@
+body{
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	color:black;
+}
+
+.navbar{
+	background-image:url("./navbar.jpg");
+	background-repeat: repeat-x;
+	padding: 5px 5px 5px 5px;
+	height:80px;	
+}
+
+.logo{
+	color:black;
+	background:#c34500;
+	float:left;
+	padding: 5px 5px 5px 5px;
+	margin:18px 25px 22px 25px;
+	height:36px;
+	border-radius: 5px;
+}
+
+.navlist{
+	list-style-type:none;
+}
+
+.navlink{
+    margin: 10px 10px 25px 5px;
+    padding: 5px 5px 5px 5px;
+    overflow: hidden;
+	float:right;
+	font-size:12pt;
+	min-width: 100px;
+	color:black;
+	background-color:c34500;
+	text-align:center;
+	text-decoration: none;
+	border-radius: 3px;
+}
+
+.nojs{
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	background-color: red;
+	text-align: center;
+	font-size: 16pt;
+	font-style: italic;
+}
+
+.invisible{
+	visibility: hidden;
+	height:0;
+}
+
+
+.assignment{
+	margin-top: 10px;
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-bottom: 10px;
+	padding: 5px 5px 5px 5px;
+	background-image:url("./navbar.jpg");
+	background-repeat: repeat;
+	border-radius: 5px;
+}
+
+.assignmentName{
+	text-align: center;
+	border: 2px solid;
+	background-color: #c34500;
+	border-radius: 5px;
+}
+
+.question{
+	position:relative;
+	margin-top: 5px;
+	margin-right: 8%;
+	margin-left: 8%;
+	margin-bottom: 5px;
+	background-color:#FFFFFF;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.question h1{
+	position: relative;
+	color:#000000;
+	background-color:#c34500;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	padding-right: 3%;
+	padding-left: 3%;
+	margin-left: -3%;
+	margin-right: -3%;
+	margin-top: 10px;
+	border-radius: 5px;		
+}
+
+.question p{
+	border: 2px solid;
+	border-radius: 5px;
+	border-color: lightgrey;
+	text-align: center;
+}
+
+
+.answers{
+	background-color:lightgrey;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.multipleChoice{
+
+}
+
+.submitbuttondiv{
+	text-align: right;	
+}
+
+.submitbutton{
+	border-radius: 8px;	
+}

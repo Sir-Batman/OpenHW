@@ -1,0 +1,25 @@
+{
+    "assignment": {
+        "name": "Assignment 1",
+        "questions": [
+            {
+                "questionname": "Question 1",
+                "question": "What is 2 + 2?",
+                "type": "multiplechoice",
+                "answers": [
+                    "4",
+                    "not 4"
+                ]
+            },
+            {
+                "questionname": "Question 2",
+                "question": "Who is is better?",
+                "type": "multiplechoice",
+                "answers": [
+                    "Kirk",
+                    "Picard"
+                ]
+            }
+        ]
+    }
+}
