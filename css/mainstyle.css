@@ -6,7 +6,7 @@ body{
 }
 
 .navbar{
-	background-image:url("./navbar.jpg");
+	background-image:url("../images/navbar.jpg");
 	background-repeat: repeat-x;
 	padding: 5px 5px 5px 5px;
 	height:80px;	
@@ -62,7 +62,7 @@ body{
 	margin-left: 10%;
 	margin-bottom: 10px;
 	padding: 5px 5px 5px 5px;
-	background-image:url("./navbar.jpg");
+	background-image:url("../images/navbar.jpg");
 	background-repeat: repeat;
 	border-radius: 5px;
 }

@@ -1,7 +1,7 @@
 <?php
 header("content-type:application/json");
 
-$dbinfo = parse_ini_file("database.ini");
+$dbinfo = parse_ini_file("../database.ini");
 $db = new mysqli($dbinfo['server'],
 			$dbinfo['username'], 
 			$dbinfo['password'], 

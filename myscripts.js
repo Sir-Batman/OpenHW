@@ -85,7 +85,7 @@ function loadAssignment(d) {
 //straightforward ajax call to load from the json file
 function loadData(){
 	$.ajax({
-		url:"./loadassignment.php",
+		url:"./src/loadassignment.php",
 		dataType:"json",
 		success:function (d) {
 			//console.dir(d);
