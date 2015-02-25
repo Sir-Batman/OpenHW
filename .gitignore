@@ -1,3 +1,4 @@
 database.ini
 setupDB.php
 newstudent.php
+ignore/*
