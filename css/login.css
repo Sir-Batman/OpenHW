@@ -3,9 +3,10 @@
 	background-color:lightgrey;
 	text-align: left;
 	padding: 10px 10px 3px 10px;
-	margin-right: 20%;
-	margin-left: 20%;
+	margin-right: auto;
+	margin-left: auto;
 	margin-top: 5px;
+	max-width: 350px;
 	border-radius: 3px;
 	
 }
@@ -24,12 +25,14 @@
 .loginheader{
 	background-color: #C34500;
 	margin-bottom: 0;
-	margin-right: 20%;
-	margin-left: 20%;
+	padding: 10px 10px 3px 10px;
+	margin-right: auto;
+	margin-left: auto;
 	margin-bottom: 5px;
 	text-align: center;
 	height: 1.7rem;
 	padding-top: .25rem;
 	border-radius: 3px;
+	max-width: 350px;
 	
 }
