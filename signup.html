@@ -1,0 +1,68 @@
+<!DOCTYPE = html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title>Sign Up - OpenHW</title>
+		<link rel="stylesheet" type="text/css" href="./css/mainstyle.css" >
+		<link rel="stylesheet" type="text/css" href="./css/login.css">
+		<script src="./jQueryValidate/lib/jquery.js" type="text/javascript"></script>
+		<script src="./include/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="./js/signup.js"></script>
+	</head>
+	
+	<body>
+		<div class="navbar">
+			<h1 class="logo">OpenHW</h1>
+			<!-- <img class="logo"> LOGO IMAGE EVENTUALLY-->
+			<ul class="navlist">
+				<li><a class="navlink" href="./signup.html">SIGN UP</a></li>
+				<li><a class="navlink" href="./login.html">LOG IN</a></li>
+			</ul>
+		
+		
+		</div>
+		
+		<div class="nojs">JavaScript is required for the site to work.</div>
+		
+		<h3 class="loginheader">Create an Account</h3>
+		<div class="loginform">
+			<form action="src/signup.php" method="POST" id="signupForm">
+					<legend>The below information will remain confidential.<br>
+						All fields are required.</legend>
+					<p>
+						<label for="first_name">First Name:</label>
+						<input id="first_name" class="textfield" type="text" name="fname" >
+					</p>
+					<p>
+						<label for="last_name">Last Name:</label>
+						<input id="last_name" class="textfield" type="text" name="lname">
+					</p>
+					<p>
+						<label for="username">Username:</label>
+						<input id="username" class="textfield" type="text" name="username">
+					</p>
+					<p>
+						<label for="e_mail">Email:</label>
+						<input id="e_mail" class="textfield" type="email" name="email">
+					</p>
+					<p>
+						<label for="email_check">Re-Type Email:</label>
+						<input id="email_check" class="textfield" type="email" name="emailcheck">
+					</p>
+					<p>
+						<label for="pass">Password:</label>
+						<input id="pass" class="textfield" type="password" name="password" >
+					</p>
+					<p>
+						<label for="pass_check">Re-Type Password:</label>
+						<input id="pass_check" class="textfield" type="password" name="passwordcheck">
+					</p>
+					<p>
+					<input type="submit" value="Create Account">
+					</p>
+			</form>
+		</div>
+		
+		
+	</body>
+</html>

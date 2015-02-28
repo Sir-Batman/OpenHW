@@ -6,12 +6,14 @@
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 5px;
-	max-width: 350px;
+	max-width: 500px;
 	border-radius: 3px;
 	
 }
 
-
+.inputfields{
+	border: 0;
+}
 
 .textfield{
 	position:relative;
@@ -33,6 +35,6 @@
 	height: 1.7rem;
 	padding-top: .25rem;
 	border-radius: 3px;
-	max-width: 350px;
+	max-width: 500px;
 	
 }

@@ -1,3 +1,5 @@
+//login.js
+//This file provides extra functionality to the login page.
 
 //nojs:
 //if javascript is allowed on the page, hides the 

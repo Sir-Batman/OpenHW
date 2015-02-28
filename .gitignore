@@ -2,3 +2,6 @@ database.ini
 setupDB.php
 newstudent.php
 ignore/*
+include/*
+jQueryValidate/*
+jStat/*
