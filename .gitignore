@@ -5,3 +5,4 @@ ignore/*
 include/*
 jQueryValidate/*
 jStat/*
+lib/*

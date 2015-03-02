@@ -24,18 +24,20 @@ $query->execute();
 $result = $query->get_result();
 
 $row = $result->fetch_assoc();
-//echo '<br>QUERY: ', $row['firstname'], ' ', $row['lastname'];
+//echo '<br>QUERY: ', $row['firstname'], ' ', $row['lastname'], $row['password'];
 
-if( $row['password'] === $_POST['password'] ) {
+if( $row['password'] == $_POST['password'] ) {
 
 	//Log in via sessions
 	$_SESSION['last_activity'] = 1;
 
-	//echo "You are being logged in...";
-	echo "<br>session: ", $_SESSION['last_activity'];
+	//echo "<br>session: ", $_SESSION['last_activity'];
+	header('Location: ../landing.html');
+	exit;
 }
 else{
-	echo "Invalid!!!";
+
+	header('Location: ../login.html?fail=1');
 }
 
 ?>
