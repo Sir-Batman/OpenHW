@@ -20,6 +20,8 @@ body{
 	margin:18px 25px 22px 25px;
 	height:36px;
 	border-radius: 5px;
+
+	text-decoration: none;
 }
 
 .navlist{
