@@ -18,7 +18,17 @@ function loadPage(data) {
 		}, 5000);
 	}
 	else {
-		$(".content").append("you ARE logged in");
+		$(".content").append("<h2>Welcome</h2><br>");
+
+
+		for (var i = 0; i < data.assignments.length; i++) {
+
+			var link = $("<a></a>").text("Assignment " + data.assignments[i]);
+			link.attr('href', "./assignment?" + data.assignments[i] );
+			link.appendTo($(".content"));
+			$("<br>").appendTo($(".content"));
+		}
+
 	}
 
 

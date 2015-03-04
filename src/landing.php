@@ -22,10 +22,15 @@ if(isset($_SESSION['last_activity'])){
 		//echo "*Hacker voice* 'We're in'<BR>";
 		$return_array['logged_in'] = 1;	
 
-		//$query = $db->prepare("SELECT * FROM assignments");
-		//$query->execute();
-		//Get the list of assignments
-		//$rarr = $query->fetchAll(PDO::FETCH_ASSOC);
+		$ass_numbers = array();
+		//Get the list of assignment id numbers and append it to the return array
+		$query = $db->query("SELECT ass_id FROM assignments");
+		while($row = $query->fetch_assoc()){
+			array_push($ass_numbers, $row['ass_id']);
+		}
+
+		$return_array['assignments'] = $ass_numbers;
+
 
 	}
 
