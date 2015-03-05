@@ -6,6 +6,9 @@ function nojs(){
 	$(".nojs").addClass("invisible");
 }
 
+function logout(){
+	$.get("./src/logout.php");
+}
 
 //multipleChoice:
 //Creates the multiple choice section for the question, and returns the
