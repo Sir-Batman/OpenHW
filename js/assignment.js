@@ -105,10 +105,12 @@ function toggle(){
 		if(collapsed){
 			$(".assignment").animate({"width": "40%"});
 			$(".collapsebutton").animate({"right": "40%"});
+			$(".console").animate({"width": "40%"});
 		}
 		else{
 			$(".collapsebutton").animate({"right": "0%"});
 			$(".assignment").animate({"width": "80%"});
+			$(".console").animate({"width": "0%"});
 		}
 		collapsed = !collapsed;
 
@@ -130,9 +132,8 @@ $(document).ready(function (){
 	
 	//load the assignment data
 	loadData();
-	//createConsole();
+	createConsole();
 
-		var collapsed = false;
 	toggle();
 	
 });
