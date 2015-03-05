@@ -106,6 +106,7 @@ function toggle(){
 			$(".assignment").animate({"width": "40%"});
 			$(".collapsebutton").animate({"right": "40%"});
 			$(".console").animate({"width": "40%"});
+
 		}
 		else{
 			$(".collapsebutton").animate({"right": "0%"});
