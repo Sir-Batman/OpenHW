@@ -1,0 +1,77 @@
+.collapsebutton{
+	width: 40px;
+	background-color: #C34500;	
+	height: 200px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 200px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-top: 10px;
+	position: fixed;
+	right: 40%;
+}
+
+.content{
+	width:48%;
+	position: relative;
+	top: 25%;
+}
+
+.console {
+	font-family: monospace;
+	color: white;
+	height: 400px;
+	width: 40%;
+	background-color: black;
+	margin-top: 10px;
+	position: fixed;
+	right: 0;
+}
+
+.jqconsole {
+	padding: 10px;
+	padding-bottom: 10px;
+}
+
+.jqconsole-cursor {
+	background-color: #999;
+}
+
+.jqconsole-blurred .jqconsole-cursor {
+	background-color: #666;
+}
+
+.jqconsole-prompt {
+	color: #0d0;
+}
+
+.jqconsole-old-prompt {
+	color: #0b0;
+	font-weight: normal;
+}
+
+.jqconsole-input {
+	color: #dd0;
+}
+
+.jqconsole-old-input {
+color: #bb0;
+	font-weight: normal;
+}
+
+.brace {
+	color: #00FFFF;
+}
+
+.paran {
+	color: #FF00FF;
+}
+
+.bracket {
+	color: #FFFF00;
+}
+
+.jqconsole-composition {
+	background-color: red;
+}
