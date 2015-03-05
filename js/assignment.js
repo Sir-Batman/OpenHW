@@ -98,6 +98,22 @@ function loadData(){
 	});
 }
 			
+function toggle(){
+	var collapsed = false;
+	$(".collapsebutton").click(function() {
+
+		if(collapsed){
+			$(".assignment").animate({"width": "40%"});
+			$(".collapsebutton").animate({"right": "40%"});
+		}
+		else{
+			$(".collapsebutton").animate({"right": "0%"});
+			$(".assignment").animate({"width": "80%"});
+		}
+		collapsed = !collapsed;
+
+		});
+}
 
 $(document).ready(function (){
 	console.log("document ready");
@@ -114,6 +130,9 @@ $(document).ready(function (){
 	
 	//load the assignment data
 	loadData();
-	createConsole();
+	//createConsole();
+
+		var collapsed = false;
+	toggle();
 	
 });
