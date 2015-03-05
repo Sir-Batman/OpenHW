@@ -7,6 +7,8 @@
 	background-image:url("../images/navbar.jpg");
 	background-repeat: repeat;
 	border-radius: 5px;
+	width: 40%;
+	float: left;
 }
 
 .assignmentName{

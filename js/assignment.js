@@ -114,5 +114,6 @@ $(document).ready(function (){
 	
 	//load the assignment data
 	loadData();
+	createConsole();
 	
 });
