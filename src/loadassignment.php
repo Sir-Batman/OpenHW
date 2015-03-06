@@ -1,4 +1,9 @@
 <?php
+session_start();
+$return_array = array();
+
+if(isset($_SESSION['last_activity'])){
+//If the user is logged in, then connect to the server and get a list of assignments
 header("content-type:application/json");
 
 $dbinfo = parse_ini_file("../database.ini");
@@ -44,7 +49,6 @@ else{
 //ideally, this will return a json, which index.html can load up and use to populate the page.
 
 
-$return_array = array();
 $ass = $db->query("select * from assignments where ass_id=1");
 if($ass->num_rows > 0){
 	while($row = $ass->fetch_assoc()){
@@ -90,7 +94,13 @@ else{
 
 //echo "return array!!!";
 //echo "return array: ".$return_array;
-echo json_encode($return_array);
 
 mysqli_close($db);
+}
+
+else{
+	//If the user is not logged in...
+	$return_array['logged_in'] = 0;
+}
+echo json_encode($return_array);
 ?>
