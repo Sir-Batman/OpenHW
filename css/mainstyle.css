@@ -73,4 +73,8 @@ body{
 	height:0;
 }
 
-
+.warning{
+	text-align: center;
+	width: 100%;
+	background-color: red;
+}

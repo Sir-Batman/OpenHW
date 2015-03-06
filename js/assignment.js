@@ -66,21 +66,31 @@ function loadQuestion(question) {
 //loads the assignment data from the static json located in the same 
 //directory
 function loadAssignment(d) {
-	//Add the assignment specific data
-	var addtopage = $(".assignment");	
-	
-	//console.log("in loadquestions");
-	//console.log("Assignment name: " + d.assignment.name);
-	
-	var assname = $("<h1></h1>").text(d.assignment.name).addClass("assignmentName");
-	assname.appendTo(addtopage);
-	
-	//load the questions
-	for(var i = 0; i < d.assignment.questions.length; i++) {
-		var current = d.assignment.questions[i];
-		var wrapper = loadQuestion(current);
-		
-		wrapper.appendTo(addtopage);		
+	//check to see if the user is logged in to see this page
+	if(d.logged_in == 0){
+		$(".content").append("<div class='warning'>You are not logged in. Prepare to be redirected.<br>If you are not redirected automatically, click <a href='./login.html'>here</a></div>");
+		$(".assignment").addClass("invisible");
+		$(".console").addClass("invisible");
+		$(".collapsebutton").addClass("invisible");
+		setTimeout(function() {window.location.replace("./login.html");}, 3000);
+	}
+	else{
+		//Add the assignment specific data
+		var addtopage = $(".assignment");	
+
+		//console.log("in loadquestions");
+		//console.log("Assignment name: " + d.assignment.name);
+
+		var assname = $("<h1></h1>").text(d.assignment.name).addClass("assignmentName");
+		assname.appendTo(addtopage);
+
+		//load the questions
+		for(var i = 0; i < d.assignment.questions.length; i++) {
+			var current = d.assignment.questions[i];
+			var wrapper = loadQuestion(current);
+
+			wrapper.appendTo(addtopage);		
+		}
 	}
 }
 
@@ -91,28 +101,28 @@ function loadData(){
 		url:"./src/loadassignment.php",
 		dataType:"json",
 		success:function (d) {
-			//console.dir(d);
-			loadAssignment(d);
+		//console.dir(d);
+		loadAssignment(d);
 		},
 		error:console.log("Error loading json")
 	});
 }
-			
+
 function toggle(){
 	var collapsed = false;
 	$(".collapsebutton").click(function() {
 
-		if(collapsed){
+			if(collapsed){
 			$(".assignment").animate({"width": "40%"});
 			$(".collapsebutton").animate({"right": "40%"});
 			$(".console").animate({"width": "40%"});
 
-		}
-		else{
+			}
+			else{
 			$(".collapsebutton").animate({"right": "0%"});
 			$(".assignment").animate({"width": "80%"});
 			$(".console").animate({"width": "0%"});
-		}
+			}
 		collapsed = !collapsed;
 
 		});
