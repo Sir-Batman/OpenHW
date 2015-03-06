@@ -24,10 +24,14 @@ $query->execute();
 $result = $query->get_result();
 
 $row = $result->fetch_assoc();
-//echo '<br>QUERY: ', $row['firstname'], ' ', $row['lastname'], $row['password'];
-
-if( $row['password'] == $_POST['password'] ) {
-
+//echo "row: ",$row, "<br>";
+//echo '<br>QUERY: ', $row['firstname'], ' ', $row['lastname'], $row['password'], '<br>';
+//echo "num rows: ", $query->columnCount(), "HHH<br>";
+if( $username && ($row) && ($row['password'] == $_POST['password'])  ) {
+	//echo "valid pass<br>";
+	//echo "bool" , $row['password'] == $_POST['password'], "<br>";
+	//echo "db: ", $row['password'], "<br>";
+	//echo "post: ", $_POST['password'],"<br>";
 	//Log in via sessions
 	$_SESSION['last_activity'] = 1;
 
@@ -36,6 +40,7 @@ if( $row['password'] == $_POST['password'] ) {
 	exit;
 }
 else{
+	//echo "Invalid combo";
 
 	header('Location: ../login.html?fail=1');
 }
