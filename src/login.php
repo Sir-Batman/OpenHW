@@ -28,7 +28,7 @@ if($username && $row) {
 	$checkme = base64_encode(hash('sha256', $_POST['password'] . "TotesSecureM8"));
 	if ($row['password'] == $checkme){
 		//Log in via sessions
-		$_SESSION['last_activity'] = 1;
+		$_SESSION['last_activity'] = $row['ssid'];
 
 		header('Location: ../landing.html');
 		exit;
