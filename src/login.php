@@ -24,24 +24,22 @@ $query->execute();
 $result = $query->get_result();
 
 $row = $result->fetch_assoc();
-//echo "row: ",$row, "<br>";
-//echo '<br>QUERY: ', $row['firstname'], ' ', $row['lastname'], $row['password'], '<br>';
-//echo "num rows: ", $query->columnCount(), "HHH<br>";
-if( $username && ($row) && ($row['password'] == $_POST['password'])  ) {
-	//echo "valid pass<br>";
-	//echo "bool" , $row['password'] == $_POST['password'], "<br>";
-	//echo "db: ", $row['password'], "<br>";
-	//echo "post: ", $_POST['password'],"<br>";
-	//Log in via sessions
-	$_SESSION['last_activity'] = 1;
+if($username && $row) {
+	$checkme = base64_encode(hash('sha256', $_POST['password'] . "TotesSecureM8"));
+	if ($row['password'] == $checkme){
+		//Log in via sessions
+		$_SESSION['last_activity'] = 1;
 
-	//echo "<br>session: ", $_SESSION['last_activity'];
-	header('Location: ../landing.html');
-	exit;
+		header('Location: ../landing.html');
+		exit;
+	}
+	else{
+		//Invalid combo
+		header('Location: ../login.html?fail=1');
+	}
 }
 else{
-	//echo "Invalid combo";
-
+	//Invalid combo
 	header('Location: ../login.html?fail=1');
 }
 
