@@ -1,0 +1,22 @@
+table, th, td{
+	border: 1px solid black;
+	border-spacing: 0px;
+
+
+
+}
+
+th{
+	background-color: grey;
+	padding: 3px;
+
+}
+td{
+
+	padding: 3px;
+}
+
+.content{
+	margin-left: 12%
+}
+
