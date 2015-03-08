@@ -131,7 +131,9 @@ function toggle(){
 }
 
 function submitAnswer(button){
-			alert(button.id);
+	var text = "form#" + button.id;
+	var form = $(text);
+	alert(form.serialize());
 }
 			
 $(document).ready(function (){
