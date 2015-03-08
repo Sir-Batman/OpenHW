@@ -19,12 +19,23 @@ function multipleChoice(question){
 	var form = $("<form></form>").addClass("multipleChoice");
 	form.attr("id", question.questionname);
 	
-	for(var j = 0; j < question.answers.length; j++){
-		var ans = $('<input type="radio" name=current.questionname value=current.naswers[j] id=current.questionname>');
+	for (var j in question.answers){
+		var name = question.questionname;
+		var value = question.answers[j];
+		var ans = $('<input type="radio">');
+		ans.attr("name", name);
+		ans.attr("value", value);
+		ans.attr("id", value);
 		ans.appendTo(form).after($("<br>")).after(question.answers[j]);
 		//$("<br>").appendTo(answers);	
 	}
+	var submit = $("<form type='submit'>asdf</form>");
+	submit.attr("value", "Submit Answer");
+	submit.addClass("submitbutton");
+	submit.attr("id", question.questionname);
+	var submitdiv = $("<div></div>").addClass("submitbuttondiv");
 	
+	form.append(submit);
 	form.appendTo(answers);
 	
 	return answers;
@@ -50,15 +61,12 @@ function loadQuestion(question) {
 		console.log("UNSUPORTED QUESTION TYPE");
 	}
 	
-//	var submit = $("<button type='submit'></button>").text("Submit");
-//	submit.addClass("submitbutton");
-	var submitdiv = $("<div></div>").addClass("submitbuttondiv");
 	
-//	submit.appendTo(submitdiv);					
+	//submit.appendTo(submitdiv);					
 	header.appendTo(wrapper);
 	quest.appendTo(wrapper);
 	answers.appendTo(wrapper);
-//	submitdiv.appendTo(wrapper);
+	//submitdiv.appendTo(wrapper);
 	
 	return wrapper;	
 }
@@ -92,8 +100,7 @@ function loadAssignment(d) {
 
 			wrapper.appendTo(addtopage);		
 		}
-		var submit = $("<button type='submit' action='submitAssignment'>Submit</button>")
-		submit.addClass("submitbutton");
+//		submit.appendTo(addtopage);
 
 	}
 }
@@ -132,6 +139,13 @@ function toggle(){
 		});
 }
 
+function submitAnswer(){
+	$("form").submit(function(){
+			var id = $(this).id();
+			alert(id);
+			});
+}
+			
 $(document).ready(function (){
 	console.log("document ready");
 	
@@ -149,6 +163,7 @@ $(document).ready(function (){
 	loadData();
 	createConsole();
 
+	submitAnswer();
 	toggle();
 	
 });
