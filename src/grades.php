@@ -23,6 +23,8 @@ if(isset($_SESSION['last_activity'])){
 		//echo "session: ",$_SESSION['last_activity'];
 		$return_array['logged_in'] = 1;	
 
+		$grades= array();
+
 		$query = $db->prepare("SELECT * FROM grades WHERE ssid=?");
 		$query->bind_param("i", $ssid);
 		$ssid = $_SESSION['last_activity'];
@@ -34,8 +36,9 @@ if(isset($_SESSION['last_activity'])){
 		while ($row = $result->fetch_assoc()){
 			//echo "<br>in whle";
 			//echo "<br>assid: ", $row['ass_id'];
-			$return_array[$row['ass_id']] = $row['grade'];
+			$grades[$row['ass_t']] = $row['grade'];
 		}
+		$return_array['grades'] =  $grades;
 
 	}
 
