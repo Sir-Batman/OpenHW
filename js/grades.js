@@ -25,7 +25,9 @@ function loadPage(data) {
 		//We start at one because the first 
 		var table = $("<table></table>");
 		table.append("<tr><th>Assignment</th><th>Grade</th></tr>");
+		var count = 0;
 		for ( var entry in data.grades) {
+			count += 1;
 			console.log("entry: ", entry);
 			console.log("entry value: ", data.grades[entry]);
 			var row = $("<tr></tr>");
@@ -35,8 +37,12 @@ function loadPage(data) {
 			row.append(grade);
 			table.append(row);
 		}
-
-		$(".content").append(table);
+		if(count == 0){
+			$(".content").append("<p>You have assignments graded yet. Time to get to work!</p>");
+		}
+		else{
+			$(".content").append(table);
+		}
 
 	}
 }
