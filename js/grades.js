@@ -24,7 +24,7 @@ function loadPage(data) {
 
 		//We start at one because the first 
 		var table = $("<table></table>");
-		table.append("<tr><th>Assignment</th><th>Grade</th></tr>");
+		table.append("<tr><th>Assignment</th><th>Points</th></tr>");
 		var count = 0;
 		for ( var entry in data.grades) {
 			count += 1;

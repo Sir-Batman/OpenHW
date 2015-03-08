@@ -19,35 +19,6 @@ $db = new mysqli($dbinfo['server'],
 			//echo "*Hacker voice* 'We're in'<BR>";
 		}
 
-//will take in a user, and see if they are in the database
-/*$uname = "'{$_POST['uname']}'";
-$query = "select userName from students";
-$result = $db->query($query);
-
-if($result->num_rows > 0){
-	echo $uname;
-	while($row = $result->fetch_assoc()){
-		echo "ROW: ".$row["userName"]."<br>";
-		//Add "'" to the from and end of the username to make it match the value
-		//that we get from POST
-		if ($uname === "'".$row["userName"]."'" ){
-			echo "Found user!";
-			$ass = "select * from assignments where ass_id=1";
-			$questions
-		}
-		else{
-			echo "User not found";
-		}
-	}
-}
-else{
-	echo "There are no users!<br>";
-}
- */
-
-//here, we will be just grabbing some values from the database, hardcoded, so to get this thing working
-//ideally, this will return a json, which index.html can load up and use to populate the page.
-
 
 $ass = $db->query("select * from assignments where ass_id=1");
 if($ass->num_rows > 0){

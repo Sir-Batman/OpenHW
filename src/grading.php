@@ -40,7 +40,10 @@ if(isset($_SESSION['last_activity'])){
 		$questionid = 'q' . $qid;
 		$questionid = $db->real_escape_string($questionid);
 
-		$gradequery = $db->prepare("UPDATE assignment1Grades SET ". $questionid ."=? WHERE ssid=?");
+		$assignmentDBname = "assignment" . $assid . "Grades";
+		$assignmentDBname = $db->real_escape_string($assignmentDBname);
+
+		$gradequery = $db->prepare("UPDATE " . $assignmentDBname . " SET ". $questionid ."=? WHERE ssid=?");
 		echo  "vardump: ",var_dump($gradequery);
 		$gradequery->bind_param("ii", $grade,  $ssid);
 		$ssid = $_SESSION['last_activity'];
@@ -51,8 +54,31 @@ if(isset($_SESSION['last_activity'])){
 		else{
 			$grade = 0;
 		}
+		//Record individual problem grade
 		$gradequery->execute();
+
+		//Update assignment grade
 		
+		$getgrades = $db->prepare("SELECT * FROM " . $assignmentDBname . " WHERE ssid=?");
+		echo "getgrades: ", var_dump($getgrades),"<br>";
+		$getgrades->bind_param("i", $ssid);
+		$getgrades->execute();
+		$result = $getgrades->get_result();
+		$row = $result->fetch_assoc();
+		echo "row: " , var_dump($row), "<br>";
+
+		$total = 0;
+
+		foreach($row as $key=>$gradevalue){
+
+			if(!($key == "ssid")){
+				$total += $gradevalue;
+			}
+		}
+
+		$updategrade = $db->prepare("UPDATE grades SET grade=? WHERE ssid=? AND ass_id=?");
+		$updategrade->bind_param("iii", $total, $ssid, $assid);
+		$updategrade->execute();
 
 	}
 
