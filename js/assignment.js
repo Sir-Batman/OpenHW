@@ -133,7 +133,24 @@ function toggle(){
 function submitAnswer(button){
 	var text = "form#" + button.id;
 	var form = $(text);
-	alert(form.serialize());
+
+	var formarray = form.serializeArray();
+	for (var i in formarray){
+//		console.log(formarray[i]);
+//		console.log("i: " ,i);
+		var questionid = formarray[i].name;
+		var answertext = formarray[i].value;
+//		console.log("questionid: ",questionid);
+//		console.log("answertext: ",answertext);
+	}
+//	console.log(form.serializeArray());
+//	console.log(button.id);
+
+	$.ajax({
+		url:"./src/grading.php",
+		data:{q_id: questionid, ass_id: 1, sol_t: answertext},
+		type: "POST"});
+
 }
 			
 $(document).ready(function (){
