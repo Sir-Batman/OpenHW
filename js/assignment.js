@@ -27,15 +27,8 @@ function multipleChoice(question){
 		ans.attr("value", value);
 		ans.attr("id", value);
 		ans.appendTo(form).after($("<br>")).after(question.answers[j]);
-		//$("<br>").appendTo(answers);	
 	}
-	var submit = $("<form type='submit'>asdf</form>");
-	submit.attr("value", "Submit Answer");
-	submit.addClass("submitbutton");
-	submit.attr("id", question.questionname);
-	var submitdiv = $("<div></div>").addClass("submitbuttondiv");
 	
-	form.append(submit);
 	form.appendTo(answers);
 	
 	return answers;
@@ -61,12 +54,15 @@ function loadQuestion(question) {
 		console.log("UNSUPORTED QUESTION TYPE");
 	}
 	
+	var submit = $("<button  onclick='submitAnswer(this);'></button>").text("Submit Answer");
+	submit.attr("id", question.questionname);
+	var submitdiv = $("<div></div>").addClass("submitbuttondiv");
 	
-	//submit.appendTo(submitdiv);					
+	submit.appendTo(submitdiv);					
 	header.appendTo(wrapper);
 	quest.appendTo(wrapper);
 	answers.appendTo(wrapper);
-	//submitdiv.appendTo(wrapper);
+	submitdiv.appendTo(wrapper);
 	
 	return wrapper;	
 }
@@ -87,9 +83,6 @@ function loadAssignment(d) {
 		//Add the assignment specific data
 		var addtopage = $(".assignment");	
 
-		//console.log("in loadquestions");
-		//console.log("Assignment name: " + d.assignment.name);
-
 		var assname = $("<h1></h1>").text(d.assignment.name).addClass("assignmentName");
 		assname.appendTo(addtopage);
 
@@ -100,7 +93,6 @@ function loadAssignment(d) {
 
 			wrapper.appendTo(addtopage);		
 		}
-//		submit.appendTo(addtopage);
 
 	}
 }
@@ -112,7 +104,6 @@ function loadData(){
 		url:"./src/loadassignment.php",
 		dataType:"json",
 		success:function (d) {
-		//console.dir(d);
 		loadAssignment(d);
 		},
 		error:console.log("Error loading json")
@@ -139,11 +130,8 @@ function toggle(){
 		});
 }
 
-function submitAnswer(){
-	$("form").submit(function(){
-			var id = $(this).id();
-			alert(id);
-			});
+function submitAnswer(button){
+			alert(button.id);
 }
 			
 $(document).ready(function (){
@@ -163,7 +151,6 @@ $(document).ready(function (){
 	loadData();
 	createConsole();
 
-	submitAnswer();
 	toggle();
 	
 });
