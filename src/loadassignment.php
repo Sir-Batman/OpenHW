@@ -70,7 +70,7 @@ if($q->num_rows > 0){
 	while($row = $q->fetch_assoc()){
 		
 		$sol = $db->query("select * from solutions where q_id='{$row['q_id']}'");
-		$q_arr['questionname'] = "Question ".$row['q_id'];
+		$q_arr['questionname'] = $row['q_id'];
 		$q_arr['question']=$row['q_t'];
 		//array_push($return_array, $row['q_t']);
 

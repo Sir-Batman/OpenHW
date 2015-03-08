@@ -17,6 +17,7 @@ function multipleChoice(question){
 	
 	var answers = $("<div></div>").addClass("answers");
 	var form = $("<form></form>").addClass("multipleChoice");
+	form.attr("id", question.questionname);
 	
 	for(var j = 0; j < question.answers.length; j++){
 		var ans = $('<input type="radio" name=current.questionname value=current.naswers[j] id=current.questionname>');
@@ -49,15 +50,15 @@ function loadQuestion(question) {
 		console.log("UNSUPORTED QUESTION TYPE");
 	}
 	
-	var submit = $("<button type='submit'></button>").text("Submit");
-	submit.addClass("submitbutton");
+//	var submit = $("<button type='submit'></button>").text("Submit");
+//	submit.addClass("submitbutton");
 	var submitdiv = $("<div></div>").addClass("submitbuttondiv");
 	
-	submit.appendTo(submitdiv);					
+//	submit.appendTo(submitdiv);					
 	header.appendTo(wrapper);
 	quest.appendTo(wrapper);
 	answers.appendTo(wrapper);
-	submitdiv.appendTo(wrapper);
+//	submitdiv.appendTo(wrapper);
 	
 	return wrapper;	
 }
@@ -91,6 +92,9 @@ function loadAssignment(d) {
 
 			wrapper.appendTo(addtopage);		
 		}
+		var submit = $("<button type='submit' action='submitAssignment'>Submit</button>")
+		submit.addClass("submitbutton");
+
 	}
 }
 

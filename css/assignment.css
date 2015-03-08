@@ -68,5 +68,6 @@
 }
 
 .submitbutton{
-	border-radius: 8px;	
+	border-radius: 3px;	
+	border: 2px #0f0f0f;
 }
