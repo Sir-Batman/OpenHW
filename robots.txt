@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /~yatesco/
-Crawl-delay: 100
-
-User-agent: Google
-Allow: /~yatesco/index.html
-Allow: /~yatesco/login.html
