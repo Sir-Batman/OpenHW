@@ -14,10 +14,14 @@ body{
 	
 }
 
+#sillybootstrap{
+	border-radius: 0px;
+	border: none;
+}
+
 .logo{
 	color:black;
 	background:#c34500;
-	padding: 10px;
 	margin-left: 5px;
 	border-radius: 5px;
 	width: 150px;
@@ -47,7 +51,7 @@ body{
 	float: left;
 }
 .navlink{
-    margin: 10px 10px 25px 5px;
+    margin: 0px 10px 25px 5px;
     padding: 5px 5px 5px 5px;
 	font-size:12pt;
 	min-width: 100px;
@@ -81,15 +85,10 @@ body{
 }
 
 .footer{
-	clear: both;
-	position: relative;
-	z-index: 10;
-	height: 2em;
-	margin-top: -3em;
-
-	width: 100%;
 	padding-left: 10%;
 	background-color: #c34500;
+	height: 50px;
+	vertical-align: center;
 	padding-top: 1em;
 }
 
@@ -101,7 +100,6 @@ body{
 
 .main{
 	overflow: auto;
-	padding-bottom: 2em;
 }
 
 .wrapper{
