@@ -15,7 +15,8 @@
 	</head>
 	
 	<body>
-		<nav class="navbar">
+		<div class="wrapper">
+			<nav class="navbar">
 			<ul class="navlist">
 				<li><a style="text-decoration: none" class="logo" href="./index.html"><b>OpenHW</b></a></li>
 				<li><a class="navlink" href="./index.html" onclick="logout();">LOGOUT</a></li>
@@ -23,17 +24,23 @@
 				<li><a class="navlink" href="./grades">MY GRADES</a></li>
 			</ul>
 			<div style="clear: both"></div>
-		</nav>
-		
-		
-		<div class="nojs">JavaScript is required for the site to work.</div>
-		
-		<div class="content"></div>	
-		<div class="assignment"></div>
-		<div class="wrapper">
-			<div class="console"></div>
-			<div class="collapsebutton"></div>
+			</nav>
+
+
+			<div class="nojs">JavaScript is required for the site to work.</div>
+
+			<div class="main">
+				<div class="content"></div>	
+				<div class="assignment"></div>
+				<div class="consolewrapper">
+					<div class="console"></div>
+					<div class="collapsebutton"></div>
+				</div>
+			</div>
+
 		</div>
-		
+		<footer class="footer">
+		Created for CS 290 at <a href="http://oregonstate.edu">Oregon State University</a>. Check it out on <a href="http://github.com/Sir-Batman/OpenHW">GitHub!</a>
+		</footer>
 	</body>
 </html>

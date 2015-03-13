@@ -8,34 +8,41 @@
 		<script src="./include/jquery-2.1.3.min.js"></script>
 		<script src="./js/login.js"></script>
 	</head>
-	
+
 	<body>
-		<nav class="navbar">
+		<div class="wrapper">
+			<nav class="navbar">
 			<ul class="navlist">
 				<li><a style="text-decoration: none" class="logo" href="./index.html"><b>OpenHW</b></a></li>
 				<li><a class="navlink" href="./signup.html">SIGN UP</a></li>
 				<li><a class="navlink" href="./login.html">LOG IN</a></li>
 			</ul>
 			<div style="clear: both"></div>
-		</nav>
-		
-		<div class="nojs">JavaScript is required for the site to work.</div>
-		
-		<h3 class="loginheader">Log In</h3>
-		<div class="loginform">
-			<form action="./src/login.php" method="POST">
-				Username:<br>
-				<input class="textfield" type="text" name="username">
-				<br>
-				<br>
-				Password:<br>
-				<input class="textfield" type="password" name="password">
-				<br>
-				<br>
-				<input type="submit" value="Submit">
-			</form>
+			</nav>
+
+			<div class="nojs">JavaScript is required for the site to work.</div>
+
+			<div class="main">
+				<h3 class="loginheader">Log In</h3>
+				<div class="loginform">
+					<form action="./src/login.php" method="POST">
+						Username:<br>
+						<input class="textfield" type="text" name="username">
+						<br>
+						<br>
+						Password:<br>
+						<input class="textfield" type="password" name="password">
+						<br>
+						<br>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
 		</div>
-		
-		
+
+		<footer class="footer">
+		Created for CS 290 at <a href="http://oregonstate.edu">Oregon State University</a>. Check it out on <a href="http://github.com/Sir-Batman/OpenHW">GitHub!</a>
+		</footer>
+
 	</body>
 </html>

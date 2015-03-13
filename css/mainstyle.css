@@ -3,6 +3,7 @@ body{
 	margin:0 0 0 0;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
 	color:black;
+	height: 100%;
 }
 
 .navbar{
@@ -39,7 +40,7 @@ body{
 	font-size:12pt;
 	min-width: 100px;
 	color:black;
-	background-color:c34500;
+	background-color:#c34500;
 	text-align:center;
 	text-decoration: none;
 	border-radius: 3px;
@@ -51,7 +52,7 @@ body{
 	font-size:12pt;
 	min-width: 100px;
 	color:black;
-	background-color:c34500;
+	background-color:#c34500;
 	text-align:center;
 	text-decoration: none;
 	border-radius: 3px;
@@ -77,4 +78,33 @@ body{
 	text-align: center;
 	width: 100%;
 	background-color: red;
+}
+
+.footer{
+	clear: both;
+	position: relative;
+	z-index: 10;
+	height: 2em;
+	margin-top: -3em;
+
+	width: 100%;
+	padding-left: 10%;
+	background-color: #c34500;
+	padding-top: 1em;
+}
+
+.footer a{
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+
+.main{
+	overflow: auto;
+	padding-bottom: 2em;
+}
+
+.wrapper{
+	height: auto;
+	min-height: 100%;
 }
